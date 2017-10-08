@@ -1,3 +1,42 @@
-<p>
-  user-list works!
-</p>
+<div class="container" fxLayout="row"
+     fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="start start">
+  <md-card class="user-card" *ngFor="let user of userList">
+    <md-card-header>
+      <md-icon md-card-avatar class="header-image">person</md-icon>
+      <md-card-title>
+        {{user.user_name}}
+        <!--<span [ngSwitch]="user.enabled">-->
+          <!--<md-icon *ngSwitchCase="true">check_circle</md-icon>-->
+          <!--<md-icon *ngSwitchCase="false">cancel</md-icon>-->
+        <!--</span>-->
+      </md-card-title>
+      <md-card-subtitle>{{user.email}}</md-card-subtitle>
+    </md-card-header>
+
+    <md-card-content>
+      <md-list>
+        <h3 md-subheader>Secondary information</h3>
+        <md-list-item>
+          <md-icon md-list-icon>label_outline</md-icon>
+          <h4 md-line>{{user.user_custom}}</h4>
+          <p md-line>Custom</p>
+        </md-list-item>
+        <md-list-item>
+          <md-icon md-list-icon>label_outline</md-icon>
+          <h4 md-line>{{user.register_date|date}}</h4>
+          <p md-line>Registration</p>
+        </md-list-item>
+        <md-list-item>
+          <md-icon md-list-icon>label_outline</md-icon>
+          <h4 md-line>{{user.balance}}</h4>
+          <p md-line>Balance</p>
+        </md-list-item>
+        <md-list-item>
+          <md-icon md-list-icon>account_balance_wallet</md-icon>
+          <h4 md-line>{{user.wallet_amount}} {{user.wallet_currency}}</h4>
+          <p md-line>Wallet</p>
+        </md-list-item>
+      </md-list>
+    </md-card-content>
+  </md-card>
+</div>

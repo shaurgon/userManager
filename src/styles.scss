@@ -20,20 +20,24 @@ body {
   top: 0;
   left: 0;
   overflow: auto;
-}
-
-.logo {
-  width: 230px;
-  height: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -115px 0 0 -115px;
-}
-
-.text-loading {
-  text-align: center;
-  color: #fff;
-  font-size: 16px;
-  font-weight: lighter;
+  .logo {
+    width: 230px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -115px 0 0 -115px;
+    .brand {
+      text-align: center;
+      color: #fff;
+      font-size: 48px;
+      font-weight: lighter;
+    }
+    .text-loading {
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+      font-weight: lighter;
+    }
+  }
 }
