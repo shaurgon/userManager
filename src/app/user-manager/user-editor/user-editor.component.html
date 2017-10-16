@@ -5,7 +5,7 @@
     <div class="user-editor-form" [formGroup]="userForm" fxLayout="column" fxLayoutAlign="center start">
         <md-form-field *ngIf="!userId">
             <input mdInput placeholder="user ID" [(ngModel)]="user.user_id" formControlName="userId" required>
-            <md-error *ngIf="userForm.hasError('required', 'userId')">
+            <md-error *ngIf="userForm.hasError('required', ['userId'])">
                 User id is required
             </md-error>
         </md-form-field>
@@ -19,7 +19,7 @@
         </div>
         <md-form-field>
             <input mdInput placeholder="Email" [(ngModel)]="user.email" formControlName="email">
-            <md-error *ngIf="userForm.hasError('pattern', 'email')">
+            <md-error *ngIf="userForm.hasError('pattern', ['email'])">
                 Please enter a valid email address
             </md-error>
         </md-form-field>
