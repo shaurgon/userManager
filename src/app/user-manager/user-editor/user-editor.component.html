@@ -1,0 +1,33 @@
+<div class="user-editor">
+    <h3 *ngIf="!userId" class="editor-header">Create user</h3>
+    <h3 *ngIf="userId" class="editor-header">Edit user {{user.user_name}} (ID {{user.user_id}})</h3>
+    <small *ngIf="userId">Registered at {{user.register_date|date}}</small>
+    <div class="user-editor-form" [formGroup]="userForm" fxLayout="column" fxLayoutAlign="center start">
+        <md-form-field *ngIf="!userId">
+            <input mdInput placeholder="user ID" [(ngModel)]="user.user_id" formControlName="userId" required>
+            <md-error *ngIf="userForm.hasError('required', 'userId')">
+                User id is required
+            </md-error>
+        </md-form-field>
+        <div fxLayout="row">
+            <md-form-field>
+                <input mdInput placeholder="Name" [(ngModel)]="user.user_name" formControlName="userName">
+            </md-form-field>
+            <md-form-field>
+                <input mdInput placeholder="Custom" [(ngModel)]="user.user_custom" formControlName="userCustom">
+            </md-form-field>
+        </div>
+        <md-form-field>
+            <input mdInput placeholder="Email" [(ngModel)]="user.email" formControlName="email">
+            <md-error *ngIf="userForm.hasError('pattern', 'email')">
+                Please enter a valid email address
+            </md-error>
+        </md-form-field>
+        <md-slide-toggle *ngIf="userId" [(ngModel)]="user.enabled" formControlName="enabled">Enable user?</md-slide-toggle>
+        <div class="user-edit-controls" fxLayout="row" fxLayoutAlign="space-between center">
+            <button md-button (click)="cancel()">Cancel</button>
+            <button md-raised-button color="primary" (click)="create()" *ngIf="!userId">Create</button>
+            <button md-raised-button color="primary" (click)="save()" *ngIf="userId">Save</button>
+        </div>
+    </div>
+</div>

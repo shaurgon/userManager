@@ -1,0 +1,29 @@
+:host /deep/ {
+  .user-editor {
+    margin: 0 15px;
+    .editor-header {
+      margin-bottom: 0;
+    }
+    .user-editor-form {
+      margin-top: 15px;
+      .mat-form-field, .mat-select {
+        width: 100%;
+      }
+      > div {
+        width: 100%;
+        .mat-form-field, .mat-select {
+          &:not(:last-child) {
+            margin-right: 5px;
+          }
+          &:not(:first-child) {
+            margin-left: 5px;
+          }
+        }
+      }
+      .user-edit-controls {
+        margin-top: 20px;
+      }
+    }
+  }
+
+}

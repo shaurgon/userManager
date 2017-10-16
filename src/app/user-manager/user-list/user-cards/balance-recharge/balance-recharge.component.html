@@ -1,0 +1,22 @@
+<div class="balance-recharge">
+  <h3>Recharge user (ID {{userId}})</h3>
+  <div class="balance-recharge-form" fxLayout="column" fxLayoutAlign="start center">
+    <md-form-field>
+      <input mdInput type="number" placeholder="Amount" required min="0"
+             [(ngModel)]="recharge.amount" [formControl]="amount">
+      <md-error *ngIf="amount.hasError('required')">
+        Field is required
+      </md-error>
+      <md-error *ngIf="amount.hasError('min')">
+        Value must be greater 0
+      </md-error>
+    </md-form-field>
+    <md-form-field>
+      <input mdInput placeholder="Comment" [(ngModel)]="recharge.comment">
+    </md-form-field>
+  </div>
+  <div class="balance-recharge-controls" fxLayout="row" fxLayoutAlign="space-between center">
+    <button md-button (click)="close()">Cancel</button>
+    <button md-raised-button color="primary" (click)="save()">Recharge</button>
+  </div>
+</div>

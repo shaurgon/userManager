@@ -1,0 +1,57 @@
+<div class="user-transactions">
+  <h3>User transactions</h3>
+  <div class="user-transactions-filters" fxLayout="row" fxLayoutAlign="space-between center">
+    <md-select placeholder="Transaction type" [(ngModel)]="filters.type" (change)="request()">
+      <md-option value="">All</md-option>
+      <md-option *ngFor="let type of transactionTypes" [value]="type">{{type}}</md-option>
+    </md-select>
+    <div>
+      <md2-datepicker placeholder="Start date" [type]="'date'"
+                      [(ngModel)]="filters.from" [format]="'y-M-d'"
+                      [openOnFocus]="true" (change)="request()"></md2-datepicker>
+      -
+      <md2-datepicker placeholder="Finish date" [type]="'date'"
+                      [(ngModel)]="filters.to" [format]="'y-M-d'"
+                      [openOnFocus]="true" (change)="request()"></md2-datepicker>
+    </div>
+  </div>
+  <table class="table"
+         [md2Data]="transactions"
+         #md2="md2DataTable"
+         [rowsPerPage]="20" [sortBy]="'date'" [sortOrder]="'desc'"
+         [(activePage)]="page">
+    <thead>
+    <tr>
+      <th md2SortBy="transaction_id">transaction_id</th>
+      <th md2SortBy="coupon_id">coupon_id</th>
+      <th md2SortBy="coupon_code">coupon_code</th>
+      <th md2SortBy="transaction_type">transaction_type</th>
+      <th md2SortBy="comment">comment</th>
+      <th md2SortBy="date">date</th>
+      <th md2SortBy="amount">amount</th>
+      <th md2SortBy="sum">sum</th>
+      <th md2SortBy="currency">currency</th>
+      <th md2SortBy="status">status</th>
+      <th md2SortBy="user_balance">user_balance</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of md2.data">
+      <td>{{item.transaction_id}}</td>
+      <td>{{item.coupon_id}}</td>
+      <td>{{item.coupon_code}}</td>
+      <td>{{item.transaction_type}}</td>
+      <td>{{item.comment}}</td>
+      <td>{{item.date|date:"yyyy-MM-dd"}}</td>
+      <td>{{item.amount}}</td>
+      <td>{{item.sum}}</td>
+      <td>{{item.currency}}</td>
+      <td>{{item.status}}</td>
+      <td>{{item.user_balance}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="user-transactions-controls" fxLayout="row" fxLayoutAlign="end center">
+    <button md-raised-button (click)="close()">Close</button>
+  </div>
+</div>

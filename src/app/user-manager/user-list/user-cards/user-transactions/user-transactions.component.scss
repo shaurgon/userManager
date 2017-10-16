@@ -1,0 +1,33 @@
+:host /deep/ {
+  .user-transactions {
+    .user-transactions-filters {
+      margin-top: -15px;
+      .mat-select {
+        .mat-select-trigger {
+          width: 160px;
+        }
+      }
+      .mat-select, md2-datepicker {
+        margin: 0 15px;
+      }
+    }
+    .table {
+      overflow: auto;
+      max-height: 500px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      thead {
+        th {
+          min-width: 100px;
+          text-align: left;
+        }
+        th:not(.md2-sort-active) > svg {
+          display: none;
+        }
+      }
+      tbody {
+
+      }
+    }
+  }
+}

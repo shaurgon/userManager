@@ -4,7 +4,19 @@ import {
     MatIconModule,
     MatCardModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatInputModule,
+    MatTooltipModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatDatepickerModule
 } from '@angular/material';
 
 @NgModule({
@@ -13,7 +25,19 @@ import {
         MatIconModule,
         MatCardModule,
         MatGridListModule,
-        MatListModule
+        MatListModule,
+        MatInputModule,
+        MatTooltipModule,
+        MatPaginatorModule,
+        MatProgressBarModule,
+        MatProgressSpinnerModule,
+        MatSlideToggleModule,
+        MatSidenavModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatSelectModule,
+        MatMenuModule,
+        MatDatepickerModule
     ]
 })
 export class CustomMaterialModule {

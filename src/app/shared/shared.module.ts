@@ -7,22 +7,27 @@ import {CustomMaterialModule} from './material.module';
 import {HttpModule} from '@angular/http';
 import {ApiService} from '../services/api.service';
 import {ErrorHandlerService} from '../services/error-handler.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NonclickableDirective} from './nonclickable.directive';
 
 @NgModule({
     imports: [
         CommonModule,
         HttpModule,
+        FormsModule, ReactiveFormsModule,
         CustomMaterialModule,
         Md2Module,
         FlexLayoutModule
     ],
-    declarations: [],
+    declarations: [
+        NonclickableDirective
+    ],
     providers: [
         ApiService,
         ErrorHandlerService
     ],
     exports: [
-        CommonModule, HttpModule, CustomMaterialModule, Md2Module, FlexLayoutModule
+        CommonModule, HttpModule, FormsModule, ReactiveFormsModule, CustomMaterialModule, Md2Module, FlexLayoutModule, NonclickableDirective
     ]
 })
 export class SharedModule {

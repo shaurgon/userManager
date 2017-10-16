@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 // modules
-import {UsersModule} from './users/users.module';
+import {UserManagerModule} from './user-manager/user-manager.module';
 import {AppRoutingModule} from './app-routing.module';
 
 // components
@@ -18,7 +18,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        UsersModule,
+        UserManagerModule,
         AppRoutingModule
     ],
     providers: [],

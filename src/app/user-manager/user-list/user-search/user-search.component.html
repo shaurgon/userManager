@@ -1,0 +1,15 @@
+<div class="user-search" fxLayout="row" fxLayoutAlign="center center">
+  Search user by
+  <md-form-field fxFlex="30">
+    <input mdInput placeholder="name/custom" autocomplete="off"
+           [(ngModel)]="search.user_requisites" (change)="searchUpdate()">
+  </md-form-field>
+  or
+  <md-form-field fxFlex="30">
+    <input mdInput placeholder="email" autocomplete="off"
+           [(ngModel)]="search.email" [formControl]="email" (change)="searchUpdate()">
+    <md-error *ngIf="email.hasError('pattern')">
+      Please enter a valid email address
+    </md-error>
+  </md-form-field>
+</div>

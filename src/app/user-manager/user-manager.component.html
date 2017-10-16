@@ -1,0 +1,13 @@
+<md-toolbar class="top">
+    <md-icon>supervisor_account</md-icon>
+    <span class="title">User Manager</span>
+</md-toolbar>
+<md-sidenav-container (backdropClick)="closeEditor()">
+    <app-user-list></app-user-list>
+    <md-sidenav #sidenav mode="over" opened="false" position="end" disableClose>
+        <router-outlet (deactivate)='onDeactivate($event)'></router-outlet>
+    </md-sidenav>
+</md-sidenav-container>
+<a md-fab class="create-user" color="primary" routerLink="./create">
+    <md-icon>person_add</md-icon>
+</a>
